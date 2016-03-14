@@ -12,25 +12,28 @@ x2 = np.loadtxt('x2.txt')
 y2 = np.loadtxt('y2.txt')
 
 
+x2.sort()
+y2.sort()
 ### FONCTIONS ###
-
-def phi(m, x):
-    return np.power(x, m)
 
 def moindre_carre(x, y) :
    return np.linalg.inv(x.dot(x.T)).dot(x.dot(y))
 
+def polynome(x, y, puissance):
+	res = np.zeros((puissance + 1, len(x)))
 
-### VARIABLES ###
+	for i in range(0, puissance + 1):
+		res[i,:] = np.power(x, puissance - i)
 
-m = 20
-phiX = np.array([phi(mi, x0) for mi in range(0, m)])
-theta = moindre_carre(phiX, y0)
-
-
-#################
+	return res
 
 
-plt.plot(x0, y0, "r.")
-plt.plot(x0, [np.array([theta[i] * x0[j]**i for i in range (0, m)]) for j in range(0, 100)])
-plt.show();
+res = polynome(x2, y2, 13)
+
+
+plt.plot(x2, y2,'ro')
+plt.plot(x2, np.dot(moindre_carre(res, y2), res), 'g')
+
+plt.xlabel('Temps (s)')
+plt.ylabel('Position (m)')
+plt.show()
