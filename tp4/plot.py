@@ -31,6 +31,7 @@ res = polynome(x2, y2, 13)
 
 
 
+### Graphs ###
 plt.plot(x2, y2,'ro')
 plt.plot(x2, np.dot(moindre_carre(res, y2), res), 'g')
 plt.xlabel('Temps (s)')
