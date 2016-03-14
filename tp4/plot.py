@@ -14,7 +14,8 @@ y2 = np.loadtxt('y2.txt')
 x2.sort()
 y2.sort()
 
-### FONCTIONS ###
+##### FONCTIONS #####
+
 def moindre_carre(x, y) :
    return np.linalg.inv(x.dot(x.T)).dot(x.dot(y))
 
@@ -29,11 +30,18 @@ def polynome(x, y, puissance):
 
 res = polynome(x2, y2, 13)
 
+##### Graphs #####
 
-
-### Graphs ###
 plt.plot(x2, y2,'ro')
 plt.plot(x2, np.dot(moindre_carre(res, y2), res), 'g')
 plt.xlabel('Temps (s)')
 plt.ylabel('Position (m)')
 plt.show()
+
+#################
+
+"""
+Risque empirique par validation croisée
+
+Vérifier sur-apprentissage
+"""

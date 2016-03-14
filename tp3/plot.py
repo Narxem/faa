@@ -22,14 +22,12 @@ x = np.array([np.array([i, 1]) for i in t]).T
 def jl2(x, y, theta, N) :
 	return np.dot((y - np.dot(x.T,theta)).T, (y - np.dot(x.T, theta))) * (1./N)
 
-##
-
 def alpha(t) :
     return 1. / (1. + 4000. * float(t))
 
-def descenteGradient(x, y, t, teta, epsilon = 0.00000001, N = 100) :
+def descenteGradient(x, y, t, theta, epsilon = 0.00000001, N = 100) :
 	temps = t
-	ancien_theta = teta
+	ancien_theta = theta
 	tab = [ancien_theta]
 	while(True) :
 		gradiant = np.dot(x,(y - np.dot(x.T, ancien_theta)))
@@ -60,3 +58,7 @@ plt.legend()
 plt.show()
 
 #################
+
+"""
+descenteGradientStochastique manquante
+"""
