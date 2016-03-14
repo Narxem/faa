@@ -11,11 +11,10 @@ y1 = np.loadtxt('y1.txt')
 x2 = np.loadtxt('x2.txt')
 y2 = np.loadtxt('y2.txt')
 
-
 x2.sort()
 y2.sort()
-### FONCTIONS ###
 
+### FONCTIONS ###
 def moindre_carre(x, y) :
    return np.linalg.inv(x.dot(x.T)).dot(x.dot(y))
 
@@ -31,9 +30,9 @@ def polynome(x, y, puissance):
 res = polynome(x2, y2, 13)
 
 
+
 plt.plot(x2, y2,'ro')
 plt.plot(x2, np.dot(moindre_carre(res, y2), res), 'g')
-
 plt.xlabel('Temps (s)')
 plt.ylabel('Position (m)')
 plt.show()
