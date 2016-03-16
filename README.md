@@ -33,10 +33,12 @@ On reprend les mêmes données que pour le TP1, mais cette fois ci, l'estimation
 
 Par les moindres carrés, les performances sont légèrement différentes
 
-* jlabs = 0.727356264922
-* jl1 = 0.0877279862436
-* jl2 = 0.769619957035
-* jlinfini = 2.55866627298
+Mesure|TP1|Moindres carrés
+------------------------
+jlabs | 0.73987984094 | 0.727356264922
+jl1 | 0.0896787983772 | 0.0877279862436
+jl2 | 0.804228687838 | 0.769619957035
+jlinfini | 2.51624302238 | 2.55866627298
 
 
-[!Graphique : données et estimation par moindres carrés](tp2/graph.png)
+![Graphique : données et estimation par moindres carrés](tp2/graph.png)
