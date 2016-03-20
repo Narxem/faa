@@ -40,10 +40,11 @@ else:
 
 ##### Graphs #####
 
-plt.plot(x2, y2,'ro')
-plt.plot(x2, np.dot(moindre_carre(res, y2), res), 'g')
+plt.plot(x2, y2,'ro', label="datas")
+plt.plot(x2, np.dot(moindre_carre(res, y2), res), 'g', label="estimation")
 plt.xlabel('Temps (s)')
 plt.ylabel('Position (m)')
+plt.legend(loc=4)
 plt.show()
 
 #################

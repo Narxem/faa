@@ -70,6 +70,9 @@ print "jlinfini =", jlinf(x, p, DG[-1])
 plt.plot(range(0, len(DG)), [DG[i][0] for i in range(0, len(DG))], "r")
 plt.plot(range(0, len(DG)), [DG[i][1] for i in range(0, len(DG))], "g")
 
+plt.xlabel("Iterations")
+plt.ylabel("theta")
+
 plt.legend()
 plt.show()
 

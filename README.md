@@ -3,11 +3,16 @@ Tristan Camus
 
 # Fondements de l'apprentissage automatique
 
+Chaque TP peut être lancé de la même manière
+
+    cd tpX/
+    python2 plot.py
+
+En remplaçant X par le numéro du TP
+
 ## TP1 - Introduction 
 
-### Lancement
 
-    python2 plot.py
 
 L'execution provoque l'affichage dans la console des différentes mesures de performance (`J(theta)`), ainsi que l'apparition d'un graphique sur lequel figure en rouge les données d'entrée et en vert la courbe d'approximation `y = 2x + 3` (theta1 = 2, theta2 = 3)
 
@@ -27,9 +32,6 @@ Voici les différentes mesures de performance calculées :
 
 ## TP2 - Moindres carrés
 
-### Lancement
-
-    python2 plot.py
 
 On reprend les mêmes données que pour le TP1, mais cette fois ci, l'estimation est calculée par la méthode des moindres carrés. L'execution affiche de nouveau la mesure de performance du TP1 puis affiche les performances obtenues par les moindres carrés, et affiche enfin tous les résultats sur un graphique
 
@@ -57,10 +59,14 @@ La différence entre les données et l'estimation est légèrement plus faible q
 
 ## TP3 - Descente de gradient
 
-    python2 plot.py
 
 Le graphique affiche l'évolution des theta en au fur et à mesure des itérations de la descente de gradient. Le résutlat obtenu est très similaire à celui des moindres carrés
 
+![evolution des theta au fur et à mesure des itérations](tp3/graph1.png)
+
+Etant donné le grand nombre d'itération, il est nécessaire de zoomer pour voir ce qu'il se passe lors des premières itérations
+
+![evolution des theta au fur et à mesure des itérations (zoom)](tp3/graph2.png)
 
 theta1 = 1.95822488, theta2 = 3.53891134
 
@@ -84,7 +90,6 @@ jlinfini | 2.51624302238 | 2.55866627298 | 2.56355820742
 
 # TP4 - Généralisation
 
-    python2 plot.py
 
 Le but de ce TP est de trouver le meilleur polynome pour approximer les données
 
