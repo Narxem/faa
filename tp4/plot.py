@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 from math import sqrt
 
 ##### READ ######
@@ -13,6 +14,8 @@ y2 = np.loadtxt('y2.txt')
 
 x2.sort()
 y2.sort()
+
+
 
 ##### FONCTIONS #####
 
@@ -28,7 +31,12 @@ def polynome(x, y, puissance):
 	return res
 
 
-res = polynome(x2, y2, 13)
+if (len(sys.argv) == 2):
+	res = polynome(x2, y2, int(sys.argv[1]))
+else:
+	res = polynome(x2, y2, 13)
+
+
 
 ##### Graphs #####
 
@@ -39,9 +47,3 @@ plt.ylabel('Position (m)')
 plt.show()
 
 #################
-
-"""
-Risque empirique par validation croisée
-
-Vérifier sur-apprentissage
-"""

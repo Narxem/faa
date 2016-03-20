@@ -7,12 +7,12 @@ import random
 
 def read(pathname) :
 	fichier = open(pathname, 'r')
-	(dim1, dim2) = ([], [])
-	for ligne in fichier :
-		(taille, poids) = ligne.split()
-		dim1.append(float(taille))
-		dim2.append(float(poids))
-	return (dim1, dim2)
+	(taille, poids) = ([], [])
+	for line in fichier :
+		(ligne_taille, ligne_poids) = line.split()
+		taille.append(float(ligne_taille))
+		poids.append(float(ligne_poids))
+	return (taille, poids)
 
 (tmp_taille_f, tmp_poids_f) = read('taillepoids_f.txt')
 (tmp_taille_h, tmp_poids_h) = read('taillepoids_h.txt')
@@ -22,14 +22,11 @@ def read(pathname) :
 taille_f = np.array(tmp_taille_f, float)
 taille_h = np.array(tmp_taille_h, float)
 
-nbFilles = len(taille_f)
-nbHommes = len(taille_h)
-
 poids_f = np.array(tmp_poids_f, float)
 poids_h = np.array(tmp_poids_h, float)
 
-lesZeros = np.zeros(nbFilles)
-lesUns = np.ones(len(taille_h))
+nbFilles = len(taille_f)
+nbHommes = len(taille_h)
 
 #################
 
@@ -86,7 +83,7 @@ matrix = np.ones((2,(nbHommes + nbFilles)))
 matrix[1, :] = np.concatenate([taille_f, taille_h])
 lesClasses = np.concatenate([classe0,classe1])
 
-lesThetasLearn = descenteMultiple(matrix, lesClasses, 10, 1, 0.000001, nbHommes + nbFilles)
+lesThetasLearn = descenteMultiple(matrix, lesClasses, 10, 1, 0.000001, len(lesClasses))
 seuil = 0.6
 
 #### Graphs #####
@@ -105,10 +102,8 @@ plt.show()
 #################
 
 """
-Changer les noms de fonction si nécessaire et possible
+Changer les noms de fonction si necessaire et possible
 Changer les noms de var
-Changer la manière de plot
+Changer la maniere de plot
 Changer lecture si possible
-
-Vérifier si risqueEmpirique n'est pas une partie de validation croisée du TP4
 """
